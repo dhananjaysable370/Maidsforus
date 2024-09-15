@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import BusinessList from "./_components/BusinessList";
 import CategoryList from "./_components/CategoryList";
 import Hero from "./_components/Hero";
