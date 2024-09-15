@@ -1,39 +1,37 @@
-"use client"
-import { useEffect, useState } from "react";
+"use client";
+
+import { useEffect, useState, useCallback } from "react";
 import BusinessList from "./_components/BusinessList";
 import CategoryList from "./_components/CategoryList";
 import Hero from "./_components/Hero";
-import GlobalApi from "./_services/GlobalApi"; // Correct import path
+import GlobalApi from "./_services/GlobalApi";
 
 export default function Home() {
   const [categoryList, setCategoryList] = useState([]);
   const [businessList, setBusinessList] = useState([]);
-  /**
-  * Used to get all Category list
-  */
-  useEffect(() => {
-    getCategoryList();
-    getAllBusinessList();
-  }, []);
-  const getCategoryList = () => {
-    GlobalApi.getCategory().then(resp => {
-      setCategoryList(resp.categories);
-    })
-  }
 
   /**
-   * Used to get all business list
+   * Fetch Category List and Business List
    */
-  const getAllBusinessList = () => {
-    GlobalApi.getAllBusinessList().then(resp => {
-      setBusinessList(resp.businessLists);
-    });
-  }
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const categoryResp = await GlobalApi.getCategory();
+        setCategoryList(categoryResp.categories);
+        const businessResp = await GlobalApi.getAllBusinessList();
+        setBusinessList(businessResp.businessLists);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    fetchData();
+  }, []);
+
   return (
     <div>
       <Hero />
       <CategoryList categoryList={categoryList} />
-      <BusinessList businessList={businessList} title={'Popular Business'} />
+      <BusinessList businessList={businessList} title={"Popular Business"} />
     </div>
   );
 }
