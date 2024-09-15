@@ -30,7 +30,6 @@ function CategorySidebar() {
                   <Link href={`/search/`+category.name} key={index} className='flex items-center gap-2 p-3 border rounded-lg mb-3 md:mr-10 cursor-pointer hover:bg-purple-50 hover:text-primary hover:border-primary'>
                       <Image src={category.icon.url} alt={category.name} width={30} height={30}/>
                       <h2>{category.name}</h2>
-                      
                   </Link>
               ))}
           </div>
