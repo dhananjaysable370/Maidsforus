@@ -3,6 +3,16 @@ import { Button } from '@/components/ui/button';
 import { NotebookPen } from 'lucide-react';
 import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
+import BookingSection from './BookingSection';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
 
 function SuggestedBusinessList({ business }) {
   const [businessList, setBusinessList] = useState([]);
@@ -29,10 +39,13 @@ function SuggestedBusinessList({ business }) {
 
   return (
     <div className='px-4 w-[110%]'>
-      <Button className='flex w-full items-center gap-2 mb-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500'>
+      
+      <BookingSection business={business}>
+        <Button className='flex w-full items-center gap-2 mb-6 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500'>
         <NotebookPen className='w-[170px]'/>
         Book Appointment
       </Button>
+      </BookingSection>
 
       <h2 className='text-lg font-bold mb-5'>Similar Businesses</h2>
 

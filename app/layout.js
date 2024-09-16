@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "./_components/Header";
 
 import NextAuthSessionProvider from './provider'
+import { Toaster } from "sonner";
 
 
 const geistSans = localFont({
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
         <NextAuthSessionProvider>
           <div className="mx-6 md:mx-16">
             <Header />
+            <Toaster/>
             {children}
           </div>
         </NextAuthSessionProvider>

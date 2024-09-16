@@ -12,6 +12,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Link from 'next/link';
 
 function Header() {
   const { data: sessionData, status } = useSession();
@@ -49,8 +50,8 @@ function Header() {
             <DropdownMenuContent>
               <DropdownMenuLabel className='text-primary cursor-pointer'>My Account</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="cursor-pointer" onClick={() => {/* Handle My bookings click */}}>
-                My bookings
+              <DropdownMenuItem className="cursor-pointer">
+                <Link href={'/mybooking'}>My bookings</Link>
               </DropdownMenuItem>
               <DropdownMenuItem className="cursor-pointer" onClick={() => signOut()}>
                 Logout
