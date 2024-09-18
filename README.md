@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# MaidsForUs
 
-## Getting Started
+MaidsForUs is a service booking application that allows users to book various services such as cleaning, maintenance, and other household services. The application provides a user-friendly interface to view booking history, book new services, and manage existing bookings.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Booking Services**: Users can book services by selecting a date and time slot.
+- **Booking History**: Users can view their booking history, including upcoming and completed bookings.
+- **User Authentication**: Secure user authentication using NextAuth.
+- **Responsive Design**: The application is designed to be responsive and works on both desktop and mobile devices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Components
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### BookingSection
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+The `BookingSection` component allows users to select a date and time slot to book a service. It uses the `Calendar` component for date selection and provides available time slots for the selected date.
 
-## Learn More
+### BookingHistoryList
 
-To learn more about Next.js, take a look at the following resources:
+The `BookingHistoryList` component displays the user's booking history. It shows details such as the business name, contact person, address, service date, and time.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### MyBooking
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The `MyBooking` component is the main page where users can view their booking history. It uses the `Tabs` component to switch between upcoming and completed bookings.
 
-## Deploy on Vercel
+## API Integration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application integrates with a global API service (`GlobalApi`) to fetch booking data and manage bookings. It uses the `useSession` hook from NextAuth to get the authenticated user's session data.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/maidsforus.git
+   ```
+2. Install dependencies:
+   ```bash
+   cd maidsforus
+   npm install
+   ```
+3. Set up environment variables for authentication and API services.
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Usage
+
+- Navigate to the home page to view available services.
+- Use the booking section to select a date and time slot for the desired service.
+- View your booking history on the "My Bookings" page.
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request with your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
