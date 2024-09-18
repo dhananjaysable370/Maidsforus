@@ -31,7 +31,7 @@ The application integrates with a global API service (`GlobalApi`) to fetch book
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/dhananjaysable370/maidsforus.git
+   https://github.com/dhananjaysable370/Maidsforus
    ```
 2. Install dependencies:
    ```bash
