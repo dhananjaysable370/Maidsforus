@@ -18,7 +18,7 @@ function BusinessInfo({ business }) {
       {/* Center Section: Business Info */}
       <div className="flex justify-between items-end w-full">
         <div className='flex flex-col mt-4 md:mt-0 gap-3'>
-          <h2 className='text-lg font-bold p-1 px-3 text-primary bg-purple-100 rounded-full'>
+          <h2 className='text-lg font-bold p-1 px-5 text-primary bg-purple-100 rounded-full w-fit'>
             {business?.category?.name}
           </h2>
           <h2 className='text-2xl font-semibold'>{business?.name}</h2>
